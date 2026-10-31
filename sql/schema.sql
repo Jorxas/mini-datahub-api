@@ -1,1 +1,1 @@
-CREATE TABLE IF NOT EXISTS events (event_id TEXT PRIMARY KEY, timestamp TEXT NOT NULL, environment TEXT NOT NULL, level TEXT NOT NULL, message TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS ereignisse (ereignis_id TEXT PRIMARY KEY, zeitpunkt TEXT NOT NULL, umgebung TEXT NOT NULL, stufe TEXT NOT NULL, nachricht TEXT NOT NULL);

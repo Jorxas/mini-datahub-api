@@ -1,12 +1,11 @@
-"""Mini DataHub et analyse de journaux : base de travail, aucun résultat métier calculé."""
+"""Mini-DataHub und Protokollauswertung: technischer Einstieg ohne fertige Fachfunktion."""
 from pathlib import Path
-import json
 
-ROOT = Path(__file__).resolve().parents[1]
+PROJEKTORDNER = Path(__file__).resolve().parents[1]
 
-def import_events(data):
-    # À implémenter dans les tickets ; conserver les erreurs et les limites.
-    raise NotImplementedError("P02 : logique métier à réaliser")
+def ereignisse_importieren(daten):
+    # In den vorgesehenen Tickets umsetzen und tatsächliche Fehler sichtbar halten.
+    raise NotImplementedError("P02: Fachfunktion noch umzusetzen")
 
 if __name__ == "__main__":
-    print("P02 initialisé : consulter les fixtures et le premier ticket.")
+    print("P02 initialisiert: Beispieldaten und erstes Ticket ansehen.")

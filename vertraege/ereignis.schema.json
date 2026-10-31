@@ -2,35 +2,35 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "required": [
-    "event_id",
-    "timestamp",
-    "environment",
-    "level",
-    "message"
+    "ereignis_id",
+    "zeitpunkt",
+    "umgebung",
+    "stufe",
+    "nachricht"
   ],
   "properties": {
-    "event_id": {
+    "ereignis_id": {
       "type": "string",
       "minLength": 1
     },
-    "timestamp": {
+    "zeitpunkt": {
       "type": "string",
       "format": "date-time"
     },
-    "environment": {
+    "umgebung": {
       "enum": [
-        "dev",
+        "entwicklung",
         "test"
       ]
     },
-    "level": {
+    "stufe": {
       "enum": [
         "INFO",
         "WARN",
         "ERROR"
       ]
     },
-    "message": {
+    "nachricht": {
       "type": "string"
     }
   },

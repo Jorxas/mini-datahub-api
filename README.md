@@ -1,22 +1,24 @@
-# Mini DataHub et analyse de journaux
+# Mini-DataHub und Protokollauswertung
 
-État au 31/10/2026 : **initialisé, métier à construire**. Objectif de fin du socle : **2026-11-02**, au plus tard le 08/11/2026. Charge minimale estimée : 4 h, hors installation et variantes.
+Stand: 31. Oktober 2026 — **initialisiert; Fachfunktionen noch umzusetzen**. Geplanter Abschluss der Basis: 2026-11-02, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
-Une équipe veut importer des logs applicatifs, détecter les erreurs et suivre l'état de ses environnements.
+Ein Team möchte Anwendungsprotokolle importieren, Fehler erkennen und Entwicklungsumgebungen überwachen.
 
-Livrable : Import JSONL vers SQL, vue des erreurs, API de consultation et variante Elastic ciblée.
+Ergebnis: JSONL-Import in SQL, Fehlerübersicht und Abfrage-API; Elastic als gesonderte Variante.
 
-Technologies visées : Python, Pandas, SQL, PostgreSQL, ETL, Regex, REST/API, FastAPI, Elastic Stack. Leur présence dans ce README ne vaut pas réalisation.
+Vorgesehene Technologien: Python, Pandas, SQL, PostgreSQL, ETL, Regex, REST/API, FastAPI, Elastic Stack. Eine Nennung ist kein Nachweis einer Umsetzung.
 
-## Commencer
+## Einstieg
 
-1. Lire [le cahier des charges](CAHIER_DES_CHARGES.md).
-2. Ouvrir [le premier ticket](tickets/P02-T01.md).
-3. Consulter [la base technique](DEMARRAGE.md), puis faire un ticket à la fois.
-4. Mettre à jour [le journal](JOURNAL.md) et conserver les preuves locales.
+1. [Lastenheft](LASTENHEFT.md) lesen.
+2. [Erstes Ticket](tickets/P02-T01.md) öffnen.
+3. [Technischen Einstieg](START.md) prüfen und ein Ticket nach dem anderen bearbeiten.
+4. [Arbeitsjournal](ARBEITSJOURNAL.md) und echte Nachweise aktualisieren.
 
-Les liens employeurs privés sont dans [la matrice locale](../analyse/ENTREPRISES_PROJETS.md). Dépendances : aucune autre application du portefeuille.
+Abhängigkeiten: keine weiteren Projekte.
 
-Les variantes ne sont pas incluses dans la fin du socle. Voir [VARIANTES.md](VARIANTES.md).
+[Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
 
-Liste propre à ce projet : [entreprises et sources locales](ENTREPRISES.local.md), document privé ignoré par Git.
+## Projektsprache
+
+Dokumentation, selbst gewählte Bezeichner, Kommentare, Meldungen und Beispieldaten werden auf Deutsch geschrieben. Festgelegte API-Schlüssel, Sprachsyntax und Produktnamen bleiben unverändert.

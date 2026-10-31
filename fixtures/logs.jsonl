@@ -1,0 +1,5 @@
+{"event_id":"e1","timestamp":"2026-10-01T09:00:00Z","environment":"dev","level":"INFO","message":"service started"}
+{"event_id":"e2","timestamp":"2026-10-01T09:01:00Z","environment":"test","level":"ERROR","message":"connection refused"}
+{"event_id":"e3","timestamp":"2026-10-01T09:02:00Z","environment":"dev","level":"WARN","message":"timeout after 1000ms"}
+{"event_id":"e2","timestamp":"2026-10-01T09:01:00Z","environment":"test","level":"ERROR","message":"connection refused"}
+ligne JSON volontairement invalide

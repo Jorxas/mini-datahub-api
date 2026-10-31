@@ -1,0 +1,16 @@
+{
+  "id": "P02",
+  "status": "initialise",
+  "businessImplemented": false,
+  "fixture": "fixtures/logs.jsonl",
+  "format": "jsonl",
+  "expectedRecords": 5,
+  "starter": "src/pipeline.py",
+  "command": "python src/pipeline.py",
+  "implementationTickets": [
+    "P02-T01",
+    "P02-T02",
+    "P02-T03",
+    "P02-T04"
+  ]
+}

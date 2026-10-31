@@ -18,3 +18,5 @@ Technologies visées : Python, Pandas, SQL, PostgreSQL, ETL, Regex, REST/API, Fa
 Les liens employeurs privés sont dans [la matrice locale](../analyse/ENTREPRISES_PROJETS.md). Dépendances : aucune autre application du portefeuille.
 
 Les variantes ne sont pas incluses dans la fin du socle. Voir [VARIANTES.md](VARIANTES.md).
+
+Liste propre à ce projet : [entreprises et sources locales](ENTREPRISES.local.md), document privé ignoré par Git.

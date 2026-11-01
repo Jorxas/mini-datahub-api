@@ -1,10 +1,12 @@
 # Mini-DataHub und Protokollauswertung
 
-Stand: 31. Oktober 2026 — **initialisiert; Fachfunktionen noch umzusetzen**. Geplanter Abschluss der Basis: 2026-11-02, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 1. November 2026 — **P02-T01: Protokollformat und lokale Zeilenprüfung umgesetzt; Gesamtanwendung offen**. Geplanter Abschluss der Basis: 2026-11-02, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
 Ein Team möchte Anwendungsprotokolle importieren, Fehler erkennen und Entwicklungsumgebungen überwachen.
 
-Ergebnis: JSONL-Import in SQL, Fehlerübersicht und Abfrage-API; Elastic als gesonderte Variante.
+Geplantes Gesamtergebnis: JSONL-Import in SQL, Fehlerübersicht und Abfrage-API; Elastic als gesonderte Variante.
+
+Aktuell vorhanden: [Datenwörterbuch](vertraege/DATENWOERTERBUCH.md), JSON-Schema und ein Prüfer mit Python-Standardbibliothek für fünf unveränderte synthetische JSONL-Zeilen. Er weist eine kaputte Zeile und eine wiederholte Kennung mit Fundstellen aus. Es gibt keinen persistenten Import; Lastenheft A1 bis A4 bleiben offen. Ausführung und Abnahme stehen in [START.md](START.md).
 
 Vorgesehene Technologien: Python, Pandas, SQL, PostgreSQL, ETL, Regex, REST/API, FastAPI, Elastic Stack. Eine Nennung ist kein Nachweis einer Umsetzung.
 

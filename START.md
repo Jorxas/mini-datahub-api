@@ -1,24 +1,23 @@
 # Technischer Einstieg — P02
 
+## Protokolle lokal prüfen
 
-## Einstiegspunkt ausführen
-
-Voraussetzungen: Python 3; FastAPI und Pandas in einer eigenen Umgebung installieren.
+Im Projektordner mit der vorhandenen Laufzeit ausführen; keine zusätzlichen Bibliotheken erforderlich:
 
 ~~~powershell
-python src/pipeline.py
+uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 python -X utf8 src/pipeline.py
 ~~~
 
-Das Startprogramm meldet den Initialisierungsstand. Fachfunktionen sind bewusst noch nicht implementiert und melden dies bei einem Aufruf. Fehlende Bibliotheken und Frameworks erst im passenden Ticket mit ihrer tatsächlichen Version ergänzen.
+Tatsächlich verwendete Laufzeit: Python 3.12.14. Der lokale Zwischenspeicher hält die Schreibzugriffe innerhalb des Projektordners. Der voreingestellte uv-Zwischenspeicher war in dieser Ausführung nicht beschreibbar.
 
-## Nächste Aufgabe
+Ohne Pfadangabe liest das Programm `beispieldaten/logs.jsonl`. Ein optionaler Dateipfad kann als letztes Argument übergeben werden. Die Ausgabe enthält Zeilenzahlen, Fehler mit Inhalt und wiederholte Kennungen mit beiden Fundstellen. Das Programm schreibt keine Importdaten.
 
-Ereigniskennung, Zeitpunkt, Umgebung, Stufe und Nachricht definieren; eine kaputte Zeile vorsehen.
+## Begrenzte Abnahme wiederholen
 
-## Technische Quellen
+~~~powershell
+uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 python -X utf8 nachweise/p02-t01-pruefen.py
+~~~
 
-- [Python-CSV-Modul](https://docs.python.org/3/library/csv.html)
-- [Offizielle Angular-CLI-Anleitung](https://angular.dev/tools/cli/setup-local)
-- [WPF mit .NET](https://learn.microsoft.com/de-de/dotnet/desktop/wpf/get-started/create-app-visual-studio)
+Die Abnahme führt den Prüfer als Unterprozess aus und prüft die fünf Originalzeilen, vier gültige Zeilen, drei unterschiedliche Kennungen, `e2` in Zeile 4 gegenüber Zeile 2, den JSON-Fehler in Zeile 5 und die unveränderte Eingabedatei anhand SHA-256. Sie schreibt die tatsächliche Ausgabe, Laufzeitversion, Zeitpunkte, Prozessstatus und Prüfergebnisse nach `nachweise/P02-T01-pruefung.json`. Eine erneute Abnahme ersetzt diese Nachweisdatei durch den neuen Lauf.
 
-Vor dem Einbinden eines Frameworks dessen aktuelle offizielle Anleitung lesen.
+Format und Grenzen: [Datenwörterbuch](vertraege/DATENWOERTERBUCH.md). Dies ist keine Prüfung wiederholter persistenter Importe. Lastenheft A1 bis A4 und sämtliche späteren Tickets bleiben offen.

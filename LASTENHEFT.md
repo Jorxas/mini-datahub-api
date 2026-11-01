@@ -19,6 +19,8 @@ Lokale Einzelbenutzung, synthetische Daten und ein vorführbarer kleiner Ablauf.
 
 ## Voraussetzungen
 
+Abgrenzung P02-T01 (1. November 2026): Diese erste Vorbereitungseinheit legt nur Protokollformat und Datenwörterbuch fest und prüft fünf vorhandene JSONL-Zeilen im Arbeitsspeicher. Kaputte Zeile und wiederholte Kennung werden mit Zeilennummern ausgewiesen. A1 bleibt einschließlich Import-Idempotenz offen; auch A2 bis A4 sind nicht abgenommen. Datenbank, persistente Importlogik, API und Elastic gehören nicht zu dieser Einheit. Das begrenzte Ticketkriterium steht in [P02-T01](tickets/P02-T01.md).
+
 - Python 3
 - FastAPI und Pandas in einer eigenen Umgebung installieren
 

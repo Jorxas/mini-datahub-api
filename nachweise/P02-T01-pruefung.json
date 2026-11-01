@@ -1,0 +1,37 @@
+{
+  "projekt": "P02",
+  "ticket": "P02-T01",
+  "beginn_utc": "2026-11-01T06:18:06.696354+00:00",
+  "ende_utc": "2026-11-01T06:18:06.912742+00:00",
+  "pruefdauer_sekunden": 0.218509,
+  "python_version": "3.12.14",
+  "aufruf": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 python -X utf8 nachweise/p02-t01-pruefen.py",
+  "gepruefter_befehl": "python -X utf8 src/pipeline.py",
+  "prozessstatus": 0,
+  "standardausgabe": "{\n  \"zeilen\": 5,\n  \"gueltige_zeilen\": 4,\n  \"eindeutige_kennungen\": 3,\n  \"fehler\": [\n    {\n      \"zeile\": 5,\n      \"meldung\": \"Ungültiges JSON (Spalte 1).\",\n      \"inhalt\": \"Absichtlich ungültige JSON-Zeile\"\n    }\n  ],\n  \"wiederholungen\": [\n    {\n      \"zeile\": 4,\n      \"ereignis_id\": \"e2\",\n      \"erste_zeile\": 2\n    }\n  ]\n}\n",
+  "fehlerausgabe": "",
+  "eingabe_sha256_vorher": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+  "eingabe_sha256_nachher": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+  "pruefungen": {
+    "prozessstatus_0": true,
+    "fuenf_zeilen": true,
+    "vier_gueltige_zeilen": true,
+    "drei_eindeutige_kennungen": true,
+    "wiederholung_mit_beiden_fundstellen": true,
+    "kaputte_zeile_mit_inhalt": true,
+    "eingabe_unveraendert": true
+  },
+  "erfolgreich": true,
+  "grenze": "Nur Format und Kennungen innerhalb eines Aufrufs; keine Import-Idempotenz.",
+  "arbeitseinheit": {
+    "erste_zeitmessung_utc": "2026-11-01T06:15:28+00:00",
+    "abschlussdokumentation_utc": "2026-11-01T06:19:34.454768+00:00",
+    "beobachtete_dauer_sekunden": 246.455,
+    "geschaetzter_studentischer_aufwand_minuten": 30,
+    "einordnung": "Beobachtetes Zeitfenster des Assistenten ab erster Zeitmessung; keine menschliche Arbeitsdauer."
+  },
+  "abschlusskontrolle": {
+    "befehl": "git diff --check",
+    "ergebnis": "Ohne Beanstandung; nur ?nderungen innerhalb dieses Projektordners sichtbar."
+  }
+}

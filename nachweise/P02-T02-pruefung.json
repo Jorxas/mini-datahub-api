@@ -1,0 +1,202 @@
+{
+  "projekt": "P02",
+  "ticket": "P02-T02",
+  "beginn_utc": "2026-11-02T00:01:44.475221+00:00",
+  "ende_utc": "2026-11-02T00:01:45.130155+00:00",
+  "pruefdauer_sekunden": 0.65896,
+  "python_version": "3.12.14",
+  "sqlite_version": "3.53.1",
+  "aufruf": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 python -X utf8 nachweise/p02-t02-pruefen.py",
+  "laeufe": [
+    {
+      "befehl": [
+        "<lokaler-pfad>",
+        "-X",
+        "utf8",
+        "src/pipeline.py",
+        "--datenbank",
+        "<lokaler-pfad>"
+      ],
+      "prozessstatus": 0,
+      "standardausgabe": "{\n  \"zeilen\": 5,\n  \"gueltige_zeilen\": 4,\n  \"eindeutige_kennungen\": 3,\n  \"fehler\": [\n    {\n      \"zeile\": 5,\n      \"meldung\": \"Ungültiges JSON (Spalte 1).\",\n      \"inhalt\": \"Absichtlich ungültige JSON-Zeile\"\n    }\n  ],\n  \"wiederholungen\": [\n    {\n      \"zeile\": 4,\n      \"ereignis_id\": \"e2\",\n      \"erste_zeile\": 2\n    }\n  ],\n  \"eingefuegt\": 3,\n  \"uebersprungen\": 1,\n  \"konflikte\": [],\n  \"gespeicherte_ereignisse\": 3\n}\n",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "<lokaler-pfad>",
+        "-X",
+        "utf8",
+        "src/pipeline.py",
+        "--datenbank",
+        "<lokaler-pfad>"
+      ],
+      "prozessstatus": 0,
+      "standardausgabe": "{\n  \"zeilen\": 5,\n  \"gueltige_zeilen\": 4,\n  \"eindeutige_kennungen\": 3,\n  \"fehler\": [\n    {\n      \"zeile\": 5,\n      \"meldung\": \"Ungültiges JSON (Spalte 1).\",\n      \"inhalt\": \"Absichtlich ungültige JSON-Zeile\"\n    }\n  ],\n  \"wiederholungen\": [\n    {\n      \"zeile\": 4,\n      \"ereignis_id\": \"e2\",\n      \"erste_zeile\": 2\n    }\n  ],\n  \"eingefuegt\": 0,\n  \"uebersprungen\": 4,\n  \"konflikte\": [],\n  \"gespeicherte_ereignisse\": 3\n}\n",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "<lokaler-pfad>",
+        "-X",
+        "utf8",
+        "src/pipeline.py",
+        "<lokaler-pfad>",
+        "--datenbank",
+        "<lokaler-pfad>"
+      ],
+      "prozessstatus": 0,
+      "standardausgabe": "{\n  \"zeilen\": 12,\n  \"gueltige_zeilen\": 3,\n  \"eindeutige_kennungen\": 3,\n  \"fehler\": [\n    {\n      \"zeile\": 1,\n      \"meldung\": \"Ein Ereignis muss ein JSON-Objekt sein.\",\n      \"inhalt\": \"[]\"\n    },\n    {\n      \"zeile\": 2,\n      \"meldung\": \"Das Ereignis muss genau die fünf vereinbarten Felder enthalten.\",\n      \"inhalt\": \"{\\\"ereignis_id\\\": \\\"e1\\\", \\\"zeitpunkt\\\": \\\"2026-10-01T09:00:00Z\\\", \\\"umgebung\\\": \\\"entwicklung\\\", \\\"stufe\\\": \\\"INFO\\\", \\\"nachricht\\\": \\\"Dienst gestartet\\\", \\\"zusatz\\\": \\\"unzulässig\\\"}\"\n    },\n    {\n      \"zeile\": 3,\n      \"meldung\": \"Die Ereigniskennung darf nicht leer sein.\",\n      \"inhalt\": \"{\\\"ereignis_id\\\": \\\"\\\", \\\"zeitpunkt\\\": \\\"2026-10-01T09:00:00Z\\\", \\\"umgebung\\\": \\\"entwicklung\\\", \\\"stufe\\\": \\\"INFO\\\", \\\"nachricht\\\": \\\"Dienst gestartet\\\"}\"\n    },\n    {\n      \"zeile\": 4,\n      \"meldung\": \"Alle fünf Felder müssen Zeichenketten sein.\",\n      \"inhalt\": \"{\\\"ereignis_id\\\": \\\"e1\\\", \\\"zeitpunkt\\\": \\\"2026-10-01T09:00:00Z\\\", \\\"umgebung\\\": \\\"entwicklung\\\", \\\"stufe\\\": \\\"INFO\\\", \\\"nachricht\\\": null}\"\n    },\n    {\n      \"zeile\": 5,\n      \"meldung\": \"Die Umgebung muss entwicklung oder test sein.\",\n      \"inhalt\": \"{\\\"ereignis_id\\\": \\\"e1\\\", \\\"zeitpunkt\\\": \\\"2026-10-01T09:00:00Z\\\", \\\"umgebung\\\": \\\"unbekannt\\\", \\\"stufe\\\": \\\"INFO\\\", \\\"nachricht\\\": \\\"Dienst gestartet\\\"}\"\n    },\n    {\n      \"zeile\": 6,\n      \"meldung\": \"Die Stufe muss INFO, WARN oder ERROR sein.\",\n      \"inhalt\": \"{\\\"ereignis_id\\\": \\\"e1\\\", \\\"zeitpunkt\\\": \\\"2026-10-01T09:00:00Z\\\", \\\"umgebung\\\": \\\"entwicklung\\\", \\\"stufe\\\": \\\"FALSCH\\\", \\\"nachricht\\\": \\\"Dienst gestartet\\\"}\"\n    },\n    {\n      \"zeile\": 7,\n      \"meldung\": \"Der Zeitpunkt enthält kein gültiges Datum oder keine gültige Uhrzeit.\",\n      \"inhalt\": \"{\\\"ereignis_id\\\": \\\"e1\\\", \\\"zeitpunkt\\\": \\\"2026-02-30T09:00:00Z\\\", \\\"umgebung\\\": \\\"entwicklung\\\", \\\"stufe\\\": \\\"INFO\\\", \\\"nachricht\\\": \\\"Dienst gestartet\\\"}\"\n    },\n    {\n      \"zeile\": 8,\n      \"meldung\": \"Der Zeitpunkt muss UTC im Format JJJJ-MM-TTThh:mm:ssZ verwenden.\",\n      \"inhalt\": \"{\\\"ereignis_id\\\": \\\"e1\\\", \\\"zeitpunkt\\\": \\\"2026-10-01\\\", \\\"umgebung\\\": \\\"entwicklung\\\", \\\"stufe\\\": \\\"INFO\\\", \\\"nachricht\\\": \\\"Dienst gestartet\\\"}\"\n    },\n    {\n      \"zeile\": 12,\n      \"meldung\": \"Ungültiges JSON (Spalte 1).\",\n      \"inhalt\": \"\"\n    }\n  ],\n  \"wiederholungen\": [],\n  \"eingefuegt\": 2,\n  \"uebersprungen\": 1,\n  \"konflikte\": [\n    {\n      \"zeile\": 9,\n      \"ereignis_id\": \"e1\",\n      \"meldung\": \"Abweichender Inhalt; gespeichertes Ereignis bleibt erhalten.\"\n    }\n  ],\n  \"gespeicherte_ereignisse\": 5\n}\n",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "<lokaler-pfad>",
+        "-X",
+        "utf8",
+        "src/pipeline.py",
+        "<lokaler-pfad>",
+        "--datenbank",
+        "<lokaler-pfad>"
+      ],
+      "prozessstatus": 1,
+      "standardausgabe": "",
+      "fehlerausgabe": "Protokoll- oder Schemadatei kann nicht als UTF-8 gelesen werden.\n"
+    },
+    {
+      "befehl": [
+        "<lokaler-pfad>",
+        "-X",
+        "utf8",
+        "src/pipeline.py",
+        "--datenbank",
+        "<lokaler-pfad>"
+      ],
+      "prozessstatus": 1,
+      "standardausgabe": "",
+      "fehlerausgabe": "SQLite-Import fehlgeschlagen; Datenbankpfad, Schema und Schreibzugriff prüfen.\n"
+    },
+    {
+      "befehl": [
+        "<lokaler-pfad>",
+        "-X",
+        "utf8",
+        "src/pipeline.py"
+      ],
+      "prozessstatus": 0,
+      "standardausgabe": "{\n  \"zeilen\": 5,\n  \"gueltige_zeilen\": 4,\n  \"eindeutige_kennungen\": 3,\n  \"fehler\": [\n    {\n      \"zeile\": 5,\n      \"meldung\": \"Ungültiges JSON (Spalte 1).\",\n      \"inhalt\": \"Absichtlich ungültige JSON-Zeile\"\n    }\n  ],\n  \"wiederholungen\": [\n    {\n      \"zeile\": 4,\n      \"ereignis_id\": \"e2\",\n      \"erste_zeile\": 2\n    }\n  ]\n}\n",
+      "fehlerausgabe": ""
+    }
+  ],
+  "bestand_nach_erstem_import": [
+    [
+      "e1",
+      "2026-10-01T09:00:00Z",
+      "entwicklung",
+      "INFO",
+      "Dienst gestartet",
+      0
+    ],
+    [
+      "e2",
+      "2026-10-01T09:01:00Z",
+      "test",
+      "ERROR",
+      "Verbindung abgelehnt",
+      0
+    ],
+    [
+      "e3",
+      "2026-10-01T09:02:00Z",
+      "entwicklung",
+      "WARN",
+      "Zeitüberschreitung nach 1000 ms",
+      1
+    ]
+  ],
+  "bestand_nach_zweitem_import": [
+    [
+      "e1",
+      "2026-10-01T09:00:00Z",
+      "entwicklung",
+      "INFO",
+      "Dienst gestartet",
+      0
+    ],
+    [
+      "e2",
+      "2026-10-01T09:01:00Z",
+      "test",
+      "ERROR",
+      "Verbindung abgelehnt",
+      0
+    ],
+    [
+      "e3",
+      "2026-10-01T09:02:00Z",
+      "entwicklung",
+      "WARN",
+      "Zeitüberschreitung nach 1000 ms",
+      1
+    ]
+  ],
+  "bestand_nach_randfaellen": [
+    [
+      "e1",
+      "2026-10-01T09:00:00Z",
+      "entwicklung",
+      "INFO",
+      "Dienst gestartet",
+      0
+    ],
+    [
+      "e2",
+      "2026-10-01T09:01:00Z",
+      "test",
+      "ERROR",
+      "Verbindung abgelehnt",
+      0
+    ],
+    [
+      "e3",
+      "2026-10-01T09:02:00Z",
+      "entwicklung",
+      "WARN",
+      "Zeitüberschreitung nach 1000 ms",
+      1
+    ],
+    [
+      "pruefung-ja",
+      "2026-10-01T09:00:00Z",
+      "entwicklung",
+      "INFO",
+      "Eine ZEITÜBERSCHREITUNG!",
+      1
+    ],
+    [
+      "pruefung-nein",
+      "2026-10-01T09:00:00Z",
+      "entwicklung",
+      "INFO",
+      "Keinezeitüberschreitung",
+      0
+    ]
+  ],
+  "eingabe_sha256_vorher": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+  "eingabe_sha256_nachher": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+  "pruefungen": {
+    "zwei_importprozesse_erfolgreich": true,
+    "erster_import_drei_neue_eine_wiederholung": true,
+    "zweiter_import_keine_neuen_vier_wiederholungen": true,
+    "bestand_und_regex_markierung_exakt": true,
+    "originalfehler_und_fundstellen_in_beiden_laeufen": true,
+    "feld_und_datumsfehler_sowie_leerzeile_abgewiesen": true,
+    "inhaltskonflikt_gemeldet_und_erster_inhalt_erhalten": true,
+    "regex_ignoriert_schreibung_beachtet_wortgrenze": true,
+    "lesefehler_status_1_und_transaktion_zurueckgenommen": true,
+    "datenbankfehler_status_1_mit_deutscher_meldung": true,
+    "bisheriger_pruefmodus_erhalten": true,
+    "fuenf_originalzeilen_unveraendert": true
+  },
+  "erfolgreich": true,
+  "grenze": "Lokaler SQLite-Import; keine Umgebungsabfrage, API oder weitere Produktvariante."
+}

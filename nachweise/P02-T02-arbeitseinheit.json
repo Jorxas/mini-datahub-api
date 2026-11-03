@@ -1,0 +1,25 @@
+{
+    "projekt":  "P02",
+    "ticket":  "P02-T02",
+    "zustand":  "erledigt",
+    "studentische_schaetzung_minuten":  75,
+    "gemessener_beginn":  "2026-11-02T01:00:29.2296520+01:00",
+    "fertigstellung":  "2026-11-02T01:03:07.3451582+01:00",
+    "beobachtete_assistentenzeit_sekunden":  158.115506,
+    "zeitgrenze":  "Beobachtetes Zeitfenster ab erster Zeitmessung; kurze vorherige Einlesezeit nicht gemessen. Keine menschliche Arbeitszeit.",
+    "erster_prueflauf":  "Status 1: WinError 32 beim Entfernen der temporären SQLite-Datei; offene Leseverbindung im Prüfskript. Mit ausdrücklichem closing korrigiert.",
+    "erneuter_prueflauf":  "Status 0; 12/12 Prüfungen erfüllt; Python 3.12.14; SQLite 3.53.1; 0,658960 Sekunden reine Abnahme.",
+    "git_pruefung":  "git diff --check ohne Fehler",
+    "veroeffentlichung":  "Ausstehend durch den übergeordneten Steuerdienst; kein eigener Commit.",
+    "dateien_sha256":  {
+                           "src/pipeline.py":  "0651b2a86a0364f923ac1e7632258bfe36ca5eddaac484a5d3b59c982d756341",
+                           "sql/schema.sql":  "13dfc38d145b0d17e776963fe8c04f0d62db07251d083493e668c787f3fffee2",
+                           "nachweise/p02-t02-pruefen.py":  "f179497082146302a0dca7b3c9a64a1199922e4ea0324cc938c42d6b1df740a2",
+                           "nachweise/P02-T02-pruefung.json":  "4a24d435444e69a1d62436b3a18ae2f72e54a6ba3e945342ca819061a8c72865",
+                           "README.md":  "0f13317f3258b81b2c5aa532416d5d471df3d21e9a2ee41b32c01ede9045b64b",
+                           "START.md":  "04ed53b7fdc9874bfe4096a2164123a8d3d2d17c86adc0ee46b92c19915f0df1",
+                           "ARBEITSJOURNAL.md":  "ac18453077f4d7c44764c58211def5117b8f198e89028d232ebb1ec437512abb",
+                           "tickets/P02-T02.md":  "1082b52813960c04728fa666d0cf4ad227226c41fcfc280e9b0728a869567209",
+                           "projekt.json":  "1bf0b7021cdb27538cc7e66db3a3e7fb56933480e50686f0d033d797f9968c52"
+                       }
+}

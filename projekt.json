@@ -6,7 +6,7 @@
   "format": "jsonl",
   "expectedRecords": 5,
   "starter": "src/pipeline.py",
-  "command": "python src/pipeline.py",
+  "command": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 python -X utf8 src/pipeline.py --datenbank ausgabe/protokolle.sqlite",
   "implementationTickets": [
     "P02-T01",
     "P02-T02",

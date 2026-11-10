@@ -1,0 +1,23 @@
+{
+    "projekt":  "P02",
+    "ticket":  "P02-T03",
+    "zustand":  "blockiert",
+    "studentische_schaetzung_minuten":  75,
+    "beginn":  "2026-11-04T01:00:21.8588548+01:00",
+    "abschlussdokumentation_gesichert_am":  "2026-11-04T01:02:15.9859273+01:00",
+    "beobachtete_assistentenzeit_sekunden":  114.127,
+    "zeitbeschreibung":  "Beobachtetes Zeitfenster für Einlesen, Voraussetzungskontrolle und Blockadendokumentation; kurze Zeit vor erster Messung nicht erfasst. Keine menschliche Arbeitszeit und keine API-Fertigstellung.",
+    "vorgefundener_stand":  "P02-T02-Änderungen und Nachweise waren beim ersten git status bereits vorhanden und wurden erhalten.",
+    "dateien_sha256":  {
+                           "README.md":  "2823a983388369c66ab53597ac320d45dc53013693b9e54c9323c0cc0ccac5ef",
+                           "START.md":  "fa7a73e2d1bae4f8e8d73ed019f40b25f947bbf2bb36bf5116a9ed960e00fd26",
+                           "ARBEITSJOURNAL.md":  "7398996f96de0c128e2d112b2d85ba830a5390587dbaa5a9b2540f7297d17747",
+                           "projekt.json":  "8ed2e30a9a01fc9c99e3139a7547e569e2ba028d5e0db9158da656ba69952be3",
+                           "tickets/P02-T03.md":  "7afd0f8e8d5d8b4e9ec020fc531edaea6bcbdbee078dc379224e301d0240fa31",
+                           "nachweise/P02-T03-voraussetzungen.json":  "02683770a2ab0545cbb9d313a0d35ad246e979d8ff0edc18c3e0cf57e4f82efc",
+                           "beispieldaten/logs.jsonl":  "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+                           "src/pipeline.py":  "0651b2a86a0364f923ac1e7632258bfe36ca5eddaac484a5d3b59c982d756341",
+                           "sql/schema.sql":  "13dfc38d145b0d17e776963fe8c04f0d62db07251d083493e668c787f3fffee2"
+                       },
+    "veroeffentlichung":  "Kein Commit durch Projektarbeiter. Spätere Veröffentlichung ist getrennte Aufgabe des übergeordneten Dienstes."
+}

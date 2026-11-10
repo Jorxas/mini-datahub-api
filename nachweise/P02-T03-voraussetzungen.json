@@ -1,0 +1,39 @@
+{
+    "projekt":  "P02",
+    "ticket":  "P02-T03",
+    "zustand":  "blockiert",
+    "datum":  "2026-11-04",
+    "python_version":  "3.12.14",
+    "ausgefuehrte_befehle":  [
+                                 {
+                                     "befehl":  "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 python -X utf8 -c \"import sys, importlib.metadata as m; print(sys.version); [print(n, m.version(n)) for n in (\u0027fastapi\u0027, \u0027uvicorn\u0027, \u0027httpx\u0027)]\"",
+                                     "standardausgabe":  "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+                                     "fehlerauszug":  "importlib.metadata.PackageNotFoundError: No package metadata was found for fastapi",
+                                     "ergebnis":  "Python ausführbar; FastAPI-Metadaten fehlen. Uvicorn und HTTPX wurden wegen Abbruch nicht geprüft. Der umgebende zusammengesetzte PowerShell-Leseaufruf meldete Status 0; die Python-Abfrage scheiterte mit Traceback."
+                                 },
+                                 {
+                                     "befehl":  "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --with fastapi --with uvicorn python -X utf8 -c \"import fastapi, uvicorn; print(\u0027FastAPI\u0027, fastapi.__version__); print(\u0027Uvicorn\u0027, uvicorn.__version__)\"",
+                                     "prozessstatus":  1,
+                                     "fehlerausgabe":  "  × No solution found when resolving `--with` dependencies:\n  ╰─▶ Because fastapi was not found in the cache and you require fastapi, we\n      can conclude that your requirements are unsatisfiable.\n\nhint: Packages were unavailable because the network was disabled. When the network is disabled, registry packages may only be read from the cache.",
+                                     "ergebnis":  "Abhängigkeiten offline nicht auflösbar; Python-Programm und API wurden nicht gestartet."
+                                 },
+                                 {
+                                     "befehl":  "git diff --check",
+                                     "prozessstatus":  0,
+                                     "ergebnis":  "Keine Ausgabe, keine Leerraumfehler."
+                                 },
+                                 {
+                                     "befehl":  "Get-FileHash -Algorithm SHA256 beispieldaten/logs.jsonl; (Get-Content -Encoding UTF8 beispieldaten/logs.jsonl).Count",
+                                     "ergebnis":  "Fünf Originalzeilen; SHA-256 stimmt mit dem dokumentierten Vorgängerstand überein.",
+                                     "zeilen":  5,
+                                     "sha256":  "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623"
+                                 },
+                                 {
+                                     "befehl":  "Get-Content -Raw -Encoding UTF8 projekt.json | ConvertFrom-Json | Select-Object id, expectedRecords, abfrage_api",
+                                     "ergebnis":  "JSON lesbar; P02; expectedRecords 5; P02-T03 blockiert."
+                                 }
+                             ],
+    "fachliche_abnahme":  "Nicht ausgeführt; echte FastAPI-Laufzeit fehlt.",
+    "voraussetzung_zur_fortsetzung":  "Nutzbare echte FastAPI-/Uvicorn-Umgebung innerhalb der erlaubten Zugriffe.",
+    "grenze":  "Keine API, kein Umgebungsfilter und keine Statusübersicht implementiert oder simuliert. Keine Folgetickets begonnen; Lastenheftkriterien unverändert."
+}

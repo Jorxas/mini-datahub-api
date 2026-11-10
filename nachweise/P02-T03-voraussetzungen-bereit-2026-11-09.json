@@ -1,0 +1,13 @@
+{
+  "zeit": "2026-11-09T20:54:14.067Z",
+  "quelle": "https://pypi.org/simple",
+  "isolierung": "Projektlokaler UV-Cache; keine globale Python-Installation verändert.",
+  "versionen": {
+    "fastapi": "0.162.2",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1"
+  },
+  "pruefung": "Offline-Import und TestClient-GET /openapi.json: HTTP 200, Prozessstatus 0.",
+  "hinweis": "Starlette meldet eine Abkündigung für httpx im TestClient; der tatsächlich geprüfte Aufruf war erfolgreich.",
+  "befehl": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --default-index https://pypi.org/simple --with fastapi==0.162.2 --with uvicorn==0.54.0 --with httpx==0.28.1 python -X utf8"
+}

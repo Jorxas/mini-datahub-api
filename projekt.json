@@ -13,5 +13,14 @@
     "P02-T03",
     "P02-T04"
   ],
-  "language": "de"
+  "language": "de",
+  "abfrage_api": {
+    "ticket": "P02-T03",
+    "zustand": "erledigt",
+    "geprueft_am": "2026-11-09",
+    "startbefehl": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --default-index https://pypi.org/simple --with fastapi==0.162.2 --with uvicorn==0.54.0 --with httpx==0.28.1 python -X utf8 -m uvicorn src.api:anwendung --host 127.0.0.1 --port 8000",
+    "pruefbefehl": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --default-index https://pypi.org/simple --with fastapi==0.162.2 --with uvicorn==0.54.0 --with httpx==0.28.1 python -X utf8 nachweise/p02-t03-pruefen.py",
+    "nachweis": "nachweise/P02-T03-pruefung.json",
+    "grenze": "Nur lesende lokale API; Gesamtabschluss und P02-T04 offen."
+  }
 }

@@ -1,0 +1,350 @@
+{
+  "projekt": "P02",
+  "ticket": "P02-T03",
+  "beginn_utc": "2026-11-09T21:01:17.917685+00:00",
+  "ende_utc": "2026-11-09T21:01:20.781433+00:00",
+  "pruefdauer_sekunden": 2.873494,
+  "aufruf": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --default-index https://pypi.org/simple --with fastapi==0.162.2 --with uvicorn==0.54.0 --with httpx==0.28.1 python -X utf8 nachweise/p02-t03-pruefen.py",
+  "versionen": {
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "fastapi": "0.162.2",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1"
+  },
+  "laeufe": [
+    {
+      "befehl": [
+        "<lokaler-pfad>",
+        "-X",
+        "utf8",
+        "src/pipeline.py",
+        "--datenbank",
+        "<lokaler-pfad>"
+      ],
+      "prozessstatus": 0,
+      "standardausgabe": "{\n  \"zeilen\": 5,\n  \"gueltige_zeilen\": 4,\n  \"eindeutige_kennungen\": 3,\n  \"fehler\": [\n    {\n      \"zeile\": 5,\n      \"meldung\": \"Ungültiges JSON (Spalte 1).\",\n      \"inhalt\": \"Absichtlich ungültige JSON-Zeile\"\n    }\n  ],\n  \"wiederholungen\": [\n    {\n      \"zeile\": 4,\n      \"ereignis_id\": \"e2\",\n      \"erste_zeile\": 2\n    }\n  ],\n  \"eingefuegt\": 3,\n  \"uebersprungen\": 1,\n  \"konflikte\": [],\n  \"gespeicherte_ereignisse\": 3\n}\n",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "<lokaler-pfad>",
+        "-X",
+        "utf8",
+        "-m",
+        "uvicorn",
+        "src.api:anwendung",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "0",
+        "--no-use-colors"
+      ],
+      "datenbank": "<lokaler-pfad>",
+      "beendigung": "Prüfserver nach HTTP-Prüfung durch Prüfskript beendet.",
+      "prozessstatus": 1,
+      "protokoll": "INFO:     Started server process [37764]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://127.0.0.1:50202 (Press CTRL+C to quit)\nINFO:     127.0.0.1:50203 - \"GET /ereignisse?umgebung=entwicklung HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:50204 - \"GET /ereignisse?umgebung=test HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:50205 - \"GET /status HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:50206 - \"GET /ereignisse?umgebung=produktion HTTP/1.1\" 404 Not Found\nINFO:     127.0.0.1:50207 - \"GET /ereignisse HTTP/1.1\" 422 Unprocessable Entity\nINFO:     127.0.0.1:50209 - \"GET /ereignisse?umgebung= HTTP/1.1\" 422 Unprocessable Entity\nINFO:     127.0.0.1:50210 - \"GET /ereignisse?umgebung=Test HTTP/1.1\" 422 Unprocessable Entity\nINFO:     127.0.0.1:50211 - \"GET /ereignisse?umgebung=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa HTTP/1.1\" 422 Unprocessable Entity\nINFO:     127.0.0.1:50212 - \"GET /ereignisse?umgebung=test%27+OR+1%3D1+-- HTTP/1.1\" 422 Unprocessable Entity\nINFO:     127.0.0.1:50213 - \"GET /openapi.json HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:50214 - \"GET /ereignisse?umgebung=test HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:50215 - \"GET /status HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:50216 - \"GET /status HTTP/1.1\" 503 Service Unavailable\nINFO:     127.0.0.1:50217 - \"GET /ereignisse?umgebung=test HTTP/1.1\" 503 Service Unavailable\nINFO:     127.0.0.1:50218 - \"GET /status HTTP/1.1\" 503 Service Unavailable\n"
+    }
+  ],
+  "anfragen": [
+    {
+      "pfad": "/ereignisse?umgebung=entwicklung",
+      "http_status": 200,
+      "antwort": {
+        "umgebung": "entwicklung",
+        "ereignisanzahl": 2,
+        "fehleranzahl": 0,
+        "ereignisse": [
+          {
+            "ereignis_id": "e1",
+            "zeitpunkt": "2026-10-01T09:00:00Z",
+            "umgebung": "entwicklung",
+            "stufe": "INFO",
+            "nachricht": "Dienst gestartet",
+            "ist_zeitueberschreitung": 0
+          },
+          {
+            "ereignis_id": "e3",
+            "zeitpunkt": "2026-10-01T09:02:00Z",
+            "umgebung": "entwicklung",
+            "stufe": "WARN",
+            "nachricht": "Zeitüberschreitung nach 1000 ms",
+            "ist_zeitueberschreitung": 1
+          }
+        ]
+      }
+    },
+    {
+      "pfad": "/ereignisse?umgebung=test",
+      "http_status": 200,
+      "antwort": {
+        "umgebung": "test",
+        "ereignisanzahl": 1,
+        "fehleranzahl": 1,
+        "ereignisse": [
+          {
+            "ereignis_id": "e2",
+            "zeitpunkt": "2026-10-01T09:01:00Z",
+            "umgebung": "test",
+            "stufe": "ERROR",
+            "nachricht": "Verbindung abgelehnt",
+            "ist_zeitueberschreitung": 0
+          }
+        ]
+      }
+    },
+    {
+      "pfad": "/status",
+      "http_status": 200,
+      "antwort": {
+        "zustand": "bereit",
+        "ereignisanzahl": 3,
+        "fehleranzahl": 1,
+        "umgebungen": [
+          {
+            "umgebung": "entwicklung",
+            "ereignisanzahl": 2,
+            "fehleranzahl": 0
+          },
+          {
+            "umgebung": "test",
+            "ereignisanzahl": 1,
+            "fehleranzahl": 1
+          }
+        ]
+      }
+    },
+    {
+      "pfad": "/ereignisse?umgebung=produktion",
+      "http_status": 404,
+      "antwort": {
+        "detail": "Unbekannte Umgebung."
+      }
+    },
+    {
+      "pfad": "/ereignisse",
+      "http_status": 422,
+      "antwort": {
+        "detail": "Umgebung erforderlich: 1 bis 32 Kleinbuchstaben, Ziffern oder Bindestriche; Beginn mit einem Buchstaben."
+      }
+    },
+    {
+      "pfad": "/ereignisse?umgebung=",
+      "http_status": 422,
+      "antwort": {
+        "detail": "Umgebung erforderlich: 1 bis 32 Kleinbuchstaben, Ziffern oder Bindestriche; Beginn mit einem Buchstaben."
+      }
+    },
+    {
+      "pfad": "/ereignisse?umgebung=Test",
+      "http_status": 422,
+      "antwort": {
+        "detail": "Umgebung erforderlich: 1 bis 32 Kleinbuchstaben, Ziffern oder Bindestriche; Beginn mit einem Buchstaben."
+      }
+    },
+    {
+      "pfad": "/ereignisse?umgebung=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "http_status": 422,
+      "antwort": {
+        "detail": "Umgebung erforderlich: 1 bis 32 Kleinbuchstaben, Ziffern oder Bindestriche; Beginn mit einem Buchstaben."
+      }
+    },
+    {
+      "pfad": "/ereignisse?umgebung=test%27+OR+1%3D1+--",
+      "http_status": 422,
+      "antwort": {
+        "detail": "Umgebung erforderlich: 1 bis 32 Kleinbuchstaben, Ziffern oder Bindestriche; Beginn mit einem Buchstaben."
+      }
+    },
+    {
+      "pfad": "/openapi.json",
+      "http_status": 200,
+      "antwort": {
+        "openapi": "3.1.0",
+        "info": {
+          "title": "Mini-DataHub",
+          "description": "Lokale Protokollabfrage",
+          "version": "0.1.0"
+        },
+        "paths": {
+          "/ereignisse": {
+            "get": {
+              "summary": "Ereignisse einer Umgebung lesen",
+              "operationId": "ereignisse_lesen_ereignisse_get",
+              "parameters": [
+                {
+                  "name": "umgebung",
+                  "in": "query",
+                  "required": true,
+                  "schema": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 32,
+                    "pattern": "^[a-z][a-z0-9-]*$",
+                    "description": "Bekannte Umgebungen: entwicklung, test",
+                    "title": "Umgebung"
+                  },
+                  "description": "Bekannte Umgebungen: entwicklung, test"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Abfrage erfolgreich",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                },
+                "404": {
+                  "description": "Unbekannte Umgebung",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Fehlermeldung"
+                      }
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Ungültige Eingabe",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Fehlermeldung"
+                      }
+                    }
+                  }
+                },
+                "503": {
+                  "description": "Datenbank nicht lesbar",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Fehlermeldung"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/status": {
+            "get": {
+              "summary": "Minimalen Datenbankstatus lesen",
+              "operationId": "status_lesen_status_get",
+              "responses": {
+                "200": {
+                  "description": "Status erfolgreich gelesen",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                },
+                "503": {
+                  "description": "Datenbank nicht lesbar",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Fehlermeldung"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "Fehlermeldung": {
+              "properties": {
+                "detail": {
+                  "type": "string",
+                  "title": "Detail"
+                }
+              },
+              "type": "object",
+              "required": [
+                "detail"
+              ],
+              "title": "Fehlermeldung",
+              "description": "Einheitlicher Fehlerinhalt für den API-Vertrag."
+            }
+          }
+        }
+      }
+    },
+    {
+      "pfad": "/ereignisse?umgebung=test",
+      "http_status": 200,
+      "antwort": {
+        "umgebung": "test",
+        "ereignisanzahl": 0,
+        "fehleranzahl": 0,
+        "ereignisse": []
+      }
+    },
+    {
+      "pfad": "/status",
+      "http_status": 200,
+      "antwort": {
+        "zustand": "bereit",
+        "ereignisanzahl": 0,
+        "fehleranzahl": 0,
+        "umgebungen": []
+      }
+    },
+    {
+      "pfad": "/status",
+      "http_status": 503,
+      "antwort": {
+        "detail": "Protokolldatenbank nicht lesbar; Import und Schema prüfen."
+      }
+    },
+    {
+      "pfad": "/ereignisse?umgebung=test",
+      "http_status": 503,
+      "antwort": {
+        "detail": "Protokolldatenbank nicht lesbar; Import und Schema prüfen."
+      }
+    },
+    {
+      "pfad": "/status",
+      "http_status": 503,
+      "antwort": {
+        "detail": "Protokolldatenbank nicht lesbar; Import und Schema prüfen."
+      }
+    }
+  ],
+  "pruefungen": {
+    "originalimport_drei_ereignisse": true,
+    "entwicklung_zwei_ereignisse_keine_fehler": true,
+    "test_ein_error_ohne_duplikat": true,
+    "status_drei_ereignisse_ein_fehler": true,
+    "unbekannte_umgebung_404": true,
+    "fehlende_und_ungueltige_eingaben_422_deutsch": true,
+    "fastapi_vertrag_ausgeliefert": true,
+    "abfragen_veraendern_datenbank_nicht": true,
+    "bekannte_leere_umgebung_200": true,
+    "leerer_status_200": true,
+    "fehlende_datenbank_503_ohne_neuanlage": true,
+    "defekte_datenbank_503": true,
+    "fuenf_originalzeilen_unveraendert": true
+  },
+  "erfolgreich": true,
+  "abbruch": null,
+  "eingabe_sha256_vorher": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+  "eingabe_sha256_nachher": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+  "wiederholung_dateien": [
+    "nachweise/p02-t03-pruefen.py",
+    "src/api.py",
+    "src/pipeline.py",
+    "sql/schema.sql",
+    "beispieldaten/logs.jsonl",
+    "START.md",
+    "projekt.json"
+  ],
+  "grenze": "Nur lokale lesende FastAPI-Abfrage; kein Folgeticket und keine weitere Produktvariante."
+}

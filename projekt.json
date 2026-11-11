@@ -21,6 +21,17 @@
     "startbefehl": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --default-index https://pypi.org/simple --with fastapi==0.162.2 --with uvicorn==0.54.0 --with httpx==0.28.1 python -X utf8 -m uvicorn src.api:anwendung --host 127.0.0.1 --port 8000",
     "pruefbefehl": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --default-index https://pypi.org/simple --with fastapi==0.162.2 --with uvicorn==0.54.0 --with httpx==0.28.1 python -X utf8 nachweise/p02-t03-pruefen.py",
     "nachweis": "nachweise/P02-T03-pruefung.json",
-    "grenze": "Nur lesende lokale API; Gesamtabschluss und P02-T04 offen."
+    "grenze": "Nur lesende lokale API; keine übergreifende Gesamtfreigabe."
+  },
+  "lokale_abnahme": {
+    "ticket": "P02-T04",
+    "zustand": "erledigt",
+    "geprueft_am": "2026-11-11",
+    "pruefbefehl": "uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --default-index https://pypi.org/simple --with fastapi==0.162.2 --with uvicorn==0.54.0 --with httpx==0.28.1 python -X utf8 nachweise/p02-t04-pruefen.py",
+    "nachweis": "nachweise/P02-T04-pruefung.json",
+    "arbeitseinheit": "nachweise/P02-T04-arbeitseinheit.json",
+    "umfang": "Zwei SQLite-Importprozesse; Fehlerliste und ERROR-Anzahl über echte FastAPI-Anwendung mit TestClient im Prozess.",
+    "postgresql": "Nicht ausgeführt; eigene Variante P02-V01 offen.",
+    "elastic": "Nicht ausgeführt; eigene Variante P02-V02 und Lastenheft A4 offen."
   }
 }

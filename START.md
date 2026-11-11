@@ -108,3 +108,29 @@ Tatsächlich am 9. November ausgeführt: **13/13 Prüfungen erfüllt**, Python 3
 Der wiederholte Lauf ersetzt [P02-T03-pruefung.json](nachweise/P02-T03-pruefung.json); enthalten sind Befehle, Versionen, Serverprotokoll, alle HTTP-Antworten, Prüfergebnisse und reale Prüfdauer. Für die Wiederholung erforderlich: [Prüfskript](nachweise/p02-t03-pruefen.py), [API](src/api.py), [Import](src/pipeline.py), [SQL-Schema](sql/schema.sql), [Originaldaten](beispieldaten/logs.jsonl), diese Anleitung und [Projektkonfiguration](projekt.json). Zeit und Dateiprüfsummen des Abschlusses stehen in [Arbeitseinheit der Wiederaufnahme](nachweise/P02-T03-wiederaufnahme.json).
 
 Grenze: lokaler lesender Zugriff auf das vorhandene SQLite-Schema, keine Migration, Produktivbereitstellung oder zusätzliche Produktvariante. FastAPI/Uvicorn sind tatsächlich ausgeführt; PostgreSQL, Pandas und Elastic bleiben ohne Ausführungsnachweis. P02-T04 und übergreifende Lastenheftkästchen bleiben offen. Die früheren Abschnitte beschreiben jeweils den Stand der damaligen Phase.
+
+## P02-T04: Wiederholten Import und Fehlerauswertung gemeinsam prüfen
+
+Im Projektordner mit dem vorhandenen Offline-Cache ausführen:
+
+~~~powershell
+uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 --default-index https://pypi.org/simple --with fastapi==0.162.2 --with uvicorn==0.54.0 --with httpx==0.28.1 python -X utf8 nachweise/p02-t04-pruefen.py
+~~~
+
+Tatsächlich am 11. November 2026 ausgeführt: **16/16 Prüfungen erfüllt**, Prozessstatus 0, reine Prüfdauer 0,423969 Sekunden. Versionen: Python 3.12.14, SQLite 3.53.1, FastAPI 0.162.2, Starlette 1.10.0, httpx 0.28.1. Starlette meldet eine Ablösungswarnung für den httpx-TestClient; die vorhandene Umgebung führt die Prüfung erfolgreich aus. Kein Download oder Werkzeugwechsel erforderlich.
+
+Das Skript erzeugt unter `ausgabe/` eine neue temporäre Datenbank und startet zweimal die echte Import-CLI als getrennte Prozesse mit den fünf Originalzeilen. Beobachtet: zuerst 3 neu/1 übersprungen, danach 0 neu/4 übersprungen. Alle gespeicherten Felder bleiben inhaltlich identisch; es existieren genau `e1`, `e2`, `e3`. Beide Läufe melden genau die ungültige JSON-Zeile 5 mit Originalinhalt, die Wiederholung `e2` in Zeile 4 gegenüber Zeile 2 und keine Konflikte. Die Originaldatei bleibt bei fünf Zeilen und SHA-256 `bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623`.
+
+Nach jedem Import ruft TestClient die echte FastAPI-Anwendung im Prozess auf: `entwicklung` 2 Ereignisse/0 Fehler, `test` 1/1 und `/status` insgesamt 3/1, jeweils Status 200. T04 prüft keinen Netzwerkserver; die frühere echte Uvicorn-/HTTP-Prüfung steht separat unter T03. Der eine JSON-Eingabefehler ist eine andere Fehlerart als der eine gespeicherte `ERROR`. `WARN` mit Regex-Treffer ist kein `ERROR`, und die wiederholte `e2` zählt nur einmal. Die Fehlerliste wird in der Importausgabe festgehalten, nicht in einer Fehlerarchivtabelle.
+
+Der Prüflauf entfernt seinen temporären Bestand und ersetzt [P02-T04-pruefung.json](nachweise/P02-T04-pruefung.json) bei Wiederholung. Erforderlich sind [Prüfskript mit sämtlichen Testfällen](nachweise/p02-t04-pruefen.py), [Import](src/pipeline.py), [API](src/api.py), [SQL-Schema](sql/schema.sql), [Originaldaten](beispieldaten/logs.jsonl), diese Anleitung und [Projektkonfiguration](projekt.json). Keine zusätzlichen Testdaten oder laufenden Datenbankdienste erforderlich.
+
+PostgreSQL bleibt separat offen: kein eingerichteter PostgreSQL-Import oder tatsächlicher Abfragenachweis im Projekt, Variante P02-V01 unverändert. Elastic bleibt separat offen: keine echte Elasticsearch-Abfrage und keine Kibana-Ausführung nachgewiesen, Variante P02-V02 und Lastenheft A4 unverändert. Verfügbarkeit außerhalb dieses Projekts wurde nicht untersucht; SQLite/TestClient ersetzen keine Produktverwendung. Keine Folgetickets oder übergreifende Gesamtfreigabe.
+
+Der lokale Abschluss mit realer Zeitmessung, Konfigurationskontrolle und Dateiprüfsummen wird durch folgenden rein lokalen Befehl dokumentiert:
+
+~~~powershell
+uv --cache-dir ausgabe/uv-zwischenspeicher run --offline --python 3.12 python -X utf8 nachweise/p02-t04-abschluss.py
+~~~
+
+[P02-T04-arbeitseinheit.json](nachweise/P02-T04-arbeitseinheit.json) nennt Beginn, Ende und Dauer der ursprünglichen Einheit. Das Abschlussskript überschreibt diese Zeitangaben bei Wiederholung nicht, sondern schreibt dann `P02-T04-abschluss-wiederholung.json`. Der übergeordnete Dienst sichert den unveränderlichen Stand und erstellt erst später den echten Commit. Keine Git-Schreibbefehle durch den Projektarbeiter.

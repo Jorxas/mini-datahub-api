@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "ereignis_id",
+    "zeitpunkt",
+    "umgebung",
+    "stufe",
+    "nachricht"
+  ],
+  "properties": {
+    "ereignis_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "zeitpunkt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "umgebung": {
+      "enum": [
+        "entwicklung",
+        "test"
+      ]
+    },
+    "stufe": {
+      "enum": [
+        "INFO",
+        "WARN",
+        "ERROR"
+      ]
+    },
+    "nachricht": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

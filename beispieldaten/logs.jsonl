@@ -1,0 +1,5 @@
+{"ereignis_id":"e1","zeitpunkt":"2026-10-01T09:00:00Z","umgebung":"entwicklung","stufe":"INFO","nachricht":"Dienst gestartet"}
+{"ereignis_id":"e2","zeitpunkt":"2026-10-01T09:01:00Z","umgebung":"test","stufe":"ERROR","nachricht":"Verbindung abgelehnt"}
+{"ereignis_id":"e3","zeitpunkt":"2026-10-01T09:02:00Z","umgebung":"entwicklung","stufe":"WARN","nachricht":"Zeitüberschreitung nach 1000 ms"}
+{"ereignis_id":"e2","zeitpunkt":"2026-10-01T09:01:00Z","umgebung":"test","stufe":"ERROR","nachricht":"Verbindung abgelehnt"}
+Absichtlich ungültige JSON-Zeile

@@ -1,0 +1,89 @@
+{
+  "projekt": "P02",
+  "ticket": "P02-T03",
+  "zustand": "erledigt",
+  "studentische_schaetzung_minuten": 75,
+  "beginn_utc": "2026-11-09T20:55:16+00:00",
+  "abschlussdokumentation_gesichert_utc": "2026-11-09T21:03:04.254133+00:00",
+  "beobachtete_assistentenzeit_sekunden": 468.254,
+  "zeitbeschreibung": "Beobachtetes Zeitfenster dieser Wiederaufnahme ab erster Zeitmessung nach Einlesen bis Abschlusskontrolle; keine menschliche Arbeitszeit. Bei Wiederholung wird nur der aktuelle Sicherungszeitpunkt erneuert, nicht die historische Arbeitsdauer rekonstruiert.",
+  "versuche": [
+    {
+      "versuch": "4. November",
+      "ergebnis": "blockiert, keine API",
+      "nachweis": "nachweise/P02-T03-arbeitseinheit.json"
+    },
+    {
+      "versuch": "gemeldeter unterbrochener Lauf",
+      "ergebnis": "Bei Wiederaufnahme keine API-Datei oder fachliche API-Abnahme vorhanden; Dauer nicht belegt. Vorhandene Import- und Voraussetzungsänderungen erhalten."
+    },
+    {
+      "versuch": "diese Wiederaufnahme",
+      "ergebnis": "FastAPI implementiert; beide tatsächlichen HTTP-Prüfläufe 13/13 erfolgreich."
+    }
+  ],
+  "kontrollen": {
+    "abnahme_13_von_13": true,
+    "importstand_erhalten": true,
+    "fuenf_originalzeilen": true,
+    "konfiguration_ticket_begrenzt": true,
+    "keine_whitespacefehler": true,
+    "lastenheft_und_folgeticket_unveraendert": true
+  },
+  "befehle": [
+    {
+      "befehl": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "."
+      ],
+      "prozessstatus": 0,
+      "standardausgabe": "",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "LASTENHEFT.md",
+        "tickets/P02-T04.md"
+      ],
+      "prozessstatus": 0,
+      "standardausgabe": "",
+      "fehlerausgabe": ""
+    }
+  ],
+  "dateien_sha256": {
+    "README.md": "c074ba62946d9840635610d0028a67a2c51bd459f375ba77258cc70227793cd6",
+    "START.md": "ce83e267128a6ff1f870144cda36fb363c2d85bf07cc863151cdc0f80e2ab25c",
+    "ARBEITSJOURNAL.md": "e90f2399496523d68cc1eebedba0d26954674de8a3903a070b32cb4037577c52",
+    "projekt.json": "ee4d4738c47d1477d17426c65bb79f02677079291d97d2166efd7d6c5084a673",
+    "tickets/P02-T03.md": "5fe8ba8e165598b18c8f0abec4113d4d9b3caf7c8129de236b283f015dda001b",
+    "src/api.py": "2d6fa7ed8cccfbae95dc358b6aa57816d5d33f293c90611ddf461fef6c0956c1",
+    "src/pipeline.py": "0651b2a86a0364f923ac1e7632258bfe36ca5eddaac484a5d3b59c982d756341",
+    "sql/schema.sql": "13dfc38d145b0d17e776963fe8c04f0d62db07251d083493e668c787f3fffee2",
+    "beispieldaten/logs.jsonl": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+    "nachweise/p02-t03-pruefen.py": "5d426808ab6f6ebac5d6c5e3556d5606d378a85939a385f46779dbf21f2b12ce",
+    "nachweise/p02-t03-abschluss.py": "1fa5e70e36010517503f8e5cfa8fbdadadb621073d2f843b17e0a7b3aacfffb2",
+    "nachweise/P02-T03-pruefung.json": "072b99e204829837c7dfde937d7c794ceb6e2f433ddb32567fa207c5a00b2d51",
+    "nachweise/P02-T03-pruefung-erster-lauf.json": "2c88d754de7663edf997b7d6a4c3b64c55f4256f7a61eb9d73f68df0d0993c20",
+    "nachweise/P02-T03-voraussetzungen.json": "02683770a2ab0545cbb9d313a0d35ad246e979d8ff0edc18c3e0cf57e4f82efc",
+    "nachweise/P02-T03-arbeitseinheit.json": "3e1bbd2dc4f0bad8927d31cf6eb2a3cc85c6f139306ba1ea58508be6b9fc16bd",
+    "nachweise/P02-T03-voraussetzungen-bereit-2026-11-09.json": "1af80c76c84354e194ec4675bc4f6df7226799c316747ceff3e4f443134cb550"
+  },
+  "wiederholung_dateien": [
+    "nachweise/p02-t03-pruefen.py",
+    "src/api.py",
+    "src/pipeline.py",
+    "sql/schema.sql",
+    "beispieldaten/logs.jsonl",
+    "START.md",
+    "projekt.json",
+    "nachweise/p02-t03-abschluss.py"
+  ],
+  "veroeffentlichung": "Jetzt lokal fertiggestellt; keine Git-Schreibbefehle. Unveränderliche Sicherung und späterer Commit durch übergeordneten Dienst."
+}

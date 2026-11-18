@@ -1,0 +1,42 @@
+{
+  "projekt": "P02",
+  "ticket": "P02-T04",
+  "zeitpunkt_utc": "2026-11-11T03:04:41.143502+00:00",
+  "abschlusskontrollen": {
+    "fachliche_abnahme_erfolgreich": true,
+    "ticket_lokal_erledigt": true,
+    "keine_uebergreifende_freigabe": true,
+    "git_diff_check": true
+  },
+  "erfolgreich": true,
+  "befehl": [
+    "git",
+    "diff",
+    "--check",
+    "--",
+    "."
+  ],
+  "prozessstatus": 0,
+  "standardausgabe": "",
+  "fehlerausgabe": "",
+  "dateien_sha256": {
+    "nachweise/p02-t04-pruefen.py": "e02ebe48b0e633fd974e8b81cbeeded733c4312451ac103f9bd49d884bc40dfb",
+    "src/pipeline.py": "0651b2a86a0364f923ac1e7632258bfe36ca5eddaac484a5d3b59c982d756341",
+    "src/api.py": "2d6fa7ed8cccfbae95dc358b6aa57816d5d33f293c90611ddf461fef6c0956c1",
+    "sql/schema.sql": "13dfc38d145b0d17e776963fe8c04f0d62db07251d083493e668c787f3fffee2",
+    "beispieldaten/logs.jsonl": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623",
+    "START.md": "3210b1f7eff5d9e5b2e97b609121da9b7944e752ebf2ed0542e35b5d5a6224b1",
+    "projekt.json": "a35fcab062e8375fa410225c9d0a92c0337ee804d654c5b1ab1f0141fb94384b",
+    "nachweise/p02-t04-abschluss.py": "515d479cefe0c6727e8a0821512208196eec5a49c0082b44b9075289b15fc338",
+    "nachweise/P02-T04-pruefung.json": "2171a09eb6e8983f9ddbb8c89cfd7e78955f21d18dbdf36462bb023d478f98a0",
+    "README.md": "d64b8ecf18c07682a2e7ba3258bb9c4fdf5d0d74d0f7e977116b00134264b20f",
+    "ARBEITSJOURNAL.md": "4115fe368f15aa475e083438e2cf7964f50054d4bafca376c819a3a9e40cd6e0",
+    "tickets/P02-T04.md": "4ccf5eb57e7a3b452c96380fb5c69fb5f470b88cb3572ccefd058598aa38a7db",
+    "LASTENHEFT.md": "1a9c1bce5b9c8031d5a95dc8aaa034a95edfc91e7c73e765231da921caceefd0"
+  },
+  "studentische_schaetzung_minuten": 60,
+  "hinweis": "Technische Assistentenzeit, keine menschliche Eigenleistung; kurze Einlesezeit vor erster Messung nicht erfasst. Kein Commit oder Veröffentlichung durch den Projektarbeiter.",
+  "beginn_utc": "2026-11-11T03:00:43+00:00",
+  "fertigstellung_utc": "2026-11-11T03:04:41.143502+00:00",
+  "tatsaechliche_assistentenzeit_sekunden": 238.143502
+}

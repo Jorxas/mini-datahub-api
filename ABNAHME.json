@@ -1,0 +1,20 @@
+{
+  "projekt": "P02",
+  "phase": 4,
+  "snapshot": "4a1d085d793f0f34a079e23db6803f932c561cd13222e77b51a0c96c6f6d104d",
+  "quellcommit": "f56fdfc0ae7517b7258909c32cfee91d152dcd33",
+  "lokal_committet_am": "2026-11-11T20:46:27+01:00",
+  "technisch_gesichert_am": "2026-11-11T03:00:30.029Z",
+  "unveraenderlicher_quellstand_geprueft": true,
+  "redaktionell_angepasst": [
+    "nachweise/P02-T02-arbeitseinheit.json",
+    "nachweise/P02-T02-pruefung.json",
+    "nachweise/P02-T03-arbeitseinheit.json",
+    "nachweise/P02-T03-pruefung-erster-lauf.json",
+    "nachweise/P02-T03-pruefung.json",
+    "nachweise/P02-T03-voraussetzungen.json",
+    "nachweise/P02-T04-pruefung.json"
+  ],
+  "hinweis": "Lokale Pfade in Berichten entfernt; Quellprogramme nicht übersetzt oder simuliert. Die erste öffentliche Übernahme ist kein nachträglich erfundener Entwicklungsschritt. Native Produktnachweise behalten ihre ursprünglichen tatsächlichen Zeiten.",
+  "veroeffentlichungskopie_fachlich_geprueft_am": "2026-11-18T15:20:22.206Z"
+}
